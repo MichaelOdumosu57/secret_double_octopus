@@ -1,0 +1,98 @@
+<ng-container *ngFor = 'let a of ryber[appTV].quantity[1];let b = index' >
+
+
+    <ng-container *ngFor = 'let aa of a.quantity[0];let bb = index'  >
+        <div #myVal *ngIf= "a.bool[0][bb] ==='div' else boardBlock0" class = {{a.val[0][bb]}}
+        [ngStyle] = 'a.ngCss[0][bb]' ></div>
+        <ng-template #boardBlock0  >    
+            <img #myVal *ngIf= "a.bool[2][bb] ==='img' else boardBlock1" class = {{a.val[2][bb]}} [ngStyle] = 'a.ngCss[2][bb]' src="{{a.metadata.image[2][bb]}}" />
+        </ng-template>  
+        <ng-template #boardBlock1  >    
+            <video #myVal *ngIf= "a.bool[2][bb] ==='video' " class = {{a.val[2][bb]}} [ngStyle] = 'a.ngCss[2][bb]' src="{{a.metadata.image[2][bb]}}" ></video>
+        </ng-template>                  
+    </ng-container>
+
+    <ng-container *ngFor = 'let aa of a.quantity[1];let bb = index' >
+        <h1 #myVal *ngIf= "a.bool[1][bb] ==='h1' else elseBlock2" class = {{a.val[1][bb]}} 
+        [ngStyle] = 'a.ngCss[1][bb]'  >{{a.text[1][bb]}}</h1>
+        <ng-template #elseBlock2  > 
+            <h2 #myVal *ngIf= "a.bool[1][bb] ==='h2' else elseBlock3" class = {{a.val[1][bb]}} 
+            [ngStyle] = 'a.ngCss[1][bb]'  >{{a.text[1][bb]}}</h2>            
+        </ng-template>   
+        <ng-template #elseBlock3  > 
+            <h3 #myVal *ngIf= "a.bool[1][bb] ==='h3' else elseBlock4" class = {{a.val[1][bb]}} 
+            [ngStyle] = 'a.ngCss[1][bb]'  >{{a.text[1][bb]}}</h3>            
+        </ng-template>
+        <ng-template #elseBlock4  > 
+            <h4 #myVal *ngIf= "a.bool[1][bb] ==='h4' else elseBlock5" class = {{a.val[1][bb]}} 
+            [ngStyle] = 'a.ngCss[1][bb]'  >{{a.text[1][bb]}}</h4>            
+        </ng-template>     
+        <ng-template #elseBlock5  > 
+            <h5 #myVal *ngIf= "a.bool[1][bb] ==='h5' else elseBlock6" class = {{a.val[1][bb]}} 
+            [ngStyle] = 'a.ngCss[1][bb]'  >{{a.text[1][bb]}}</h5>            
+        </ng-template>    
+        <ng-template #elseBlock6  > 
+            <h6 #myVal *ngIf= "a.bool[1][bb] ==='h6' else elseBlock7" class = {{a.val[1][bb]}} 
+            [ngStyle] = 'a.ngCss[1][bb]'  >{{a.text[1][bb]}}</h6>            
+        </ng-template> 
+        <ng-template #elseBlock7  > 
+            <a #myVal *ngIf= "a.bool[1][bb] ==='a' else elseBlock8" class = {{a.val[1][bb]}} 
+            [ngStyle] = 'a.ngCss[1][bb]' href ={{a.metadata.router[1][bb].link}}  
+            (mouseover)="ryber.appEventListener(a.metadata.mouseover[1][bb].fn)"
+            (mouseout)="ryber.appEventListener(a.metadata.mouseout[1][bb].fn)"
+            >{{a.text[1][bb]}}</a>            
+        </ng-template> 
+        <ng-template #elseBlock8  > 
+            <p #myVal *ngIf= "a.bool[1][bb] ==='p' else elseBlock9" class = {{a.val[1][bb]}} 
+            [ngStyle] = 'a.ngCss[1][bb]' >{{a.text[1][bb]}}</p>            
+        </ng-template> 
+        <ng-template #elseBlock9  > 
+            <code #myVal *ngIf= "a.bool[1][bb] ==='code' else elseBlock10" class = {{a.val[1][bb]}} 
+            [ngStyle] = 'a.ngCss[1][bb]'>{{a.text[1][bb]}}</code>            
+        </ng-template> 
+        <ng-template #elseBlock10  > 
+            <span #myVal *ngIf= "a.bool[1][bb] ==='span' else elseBlock11" class = {{a.val[1][bb]}} 
+            [ngStyle] = 'a.ngCss[1][bb]' >{{a.text[1][bb]}}</span>            
+        </ng-template> 
+        <ng-template #elseBlock11  > 
+            <strong #myVal *ngIf= "a.bool[1][bb] ==='strong' else elseBlock12" class = {{a.val[1][bb]}} 
+            [ngStyle] = 'a.ngCss[1][bb]'>{{a.text[1][bb]}}</strong>            
+        </ng-template> 
+        <ng-template #elseBlock12  > 
+            <input #myVal  *ngIf= "a.bool[1][bb] ==='i' else elseBlock13" class = {{a.val[1][bb]}} 
+            [ngStyle] = 'a.ngCss[1][bb]' placeholder ={{a.metadata.placeholder[1][bb]}} >           
+        </ng-template> 
+        <ng-template #elseBlock13  > 
+            <textarea #myVal *ngIf= "a.bool[1][bb] ==='ta' " class = {{a.val[1][bb]}} 
+            [ngStyle] = 'a.ngCss[1][bb]' placeholder ={{a.metadata.placeholder[1][bb]}} ></textarea>          
+        </ng-template>                                                                                                 
+    </ng-container>
+
+    <ng-container *ngFor = 'let aa of a.quantity[2];let bb = index' >
+        <div #myVal *ngIf= "a.bool[2][bb] ==='div'   else pictureBlock0" class = {{a.val[2][bb]}} [ngStyle] = 'a.ngCss[2][bb]'  
+        (mouseover)="ryber.appEventListener(a.metadata.mouseover[2][bb].fn)" 
+        (mouseout)="ryber.appEventListener(a.metadata.mouseout[2][bb].fn)"></div>     
+        <ng-template #pictureBlock0  >    
+            <img #myVal *ngIf= "a.bool[2][bb] ==='img' else pictureBlock1" class = {{a.val[2][bb]}} [ngStyle] = 'a.ngCss[2][bb]' src="{{a.metadata.image[2][bb]}}" />
+        </ng-template>  
+        <ng-template #pictureBlock1  >    
+            <button #myVal *ngIf= "a.bool[2][bb] ==='button' else pictureBlock2 " class = {{a.val[2][bb]}}  [ngStyle] =  'a.ngCss[2][bb]'  
+            (mouseover)="ryber.appEventListener(a.metadata.mouseover[2][bb].fn)" 
+            (mouseout)="ryber.appEventListener(a.metadata.mouseout[2][bb].fn)">{{a.text[2][bb]}}</button>
+        </ng-template> 
+        <ng-template #pictureBlock2  >    
+            <embed #myVal *ngIf= "a.bool[2][bb] ==='embed' else pictureBlock3" class = {{a.val[2][bb]}}  [ngStyle] =  'a.ngCss[2][bb]'  >
+        </ng-template>           
+        <ng-template #pictureBlock3  >    
+            <video controls #myVal *ngIf= "a.bool[2][bb] ==='video' else pictureBlock4" class = {{a.val[2][bb]}}  
+            [ngStyle] =  'a.ngCss[2][bb]'  src='{{a.metadata.video[2][bb]}}' >
+                <!-- <source src="/media/examples/flower.mp4" type="video/mp4"> -->
+            </video>
+        </ng-template>                      
+        <ng-template #pictureBlock4  >    
+            <audio #myVal *ngIf= "a.bool[2][bb] ==='audio' " class = {{a.val[2][bb]}}  [ngStyle] =  'a.ngCss[2][bb]'  ></audio>
+        </ng-template>                               
+    </ng-container>    
+
+</ng-container>     
+    

@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "backendfire": {
+      "hosting": {
+        "videoOfWorks": [
+          "backendfire"
+        ]
+      }
+    }
+  }
+}

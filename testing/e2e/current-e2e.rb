@@ -159,15 +159,30 @@ module TestMod
   
     RSpec.feature "login page" do
 
-      scenario %{submit button should the person to see the video} do
+      scenario %{submit button should allow the person to see the video when the password is coorect} do
         visit %{/}
         login_submit = first %{.l_o_g_i_n_Submit}
-        sleep 4
+        login_pass = first  %{.l_o_g_i_n_Password}
+        login_pass.send_keys %{forbes500list}
         login_submit.select_option        
+        sleep 4
         video = first %{.p_a_n_e_l_Videoground}
         video.select_option 
         expect(page).to have_selector %{.p_a_n_e_l_Videoground}
-      end           
+      end 
+      
+      scenario %{mfa button should bring user to multi-factor auth page} do
+        sleep 3
+        execute_script %Q{
+          window.name = "/"
+        }
+        visit %{/}
+        login_submit = all %{.l_o_g_i_n_Submit}
+        login_submit = login_submit[1]
+        login_submit.select_option        
+        sleep 4
+        expect(page).to have_selector %{.l_o_g_i_n_mfaHeading}
+      end       
     end    
   end
 end
